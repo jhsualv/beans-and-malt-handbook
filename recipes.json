@@ -5,11 +5,6 @@
         "Sizes: Hot (4oz, 8-10oz, 12oz, 16oz) and Iced (12oz, 16oz, 24oz). 8-10oz uses same cup; fill level differs.",
         "Most drinks are medium or large. If someone asks for a small, make a medium.",
         "To-stay cups are only for HOT drinks smaller than large (16oz)."
-      ],
-      "flavorRules": [
-        "Caramel/Chocolate (milk or dark): 30g medium, 40g large.",
-        "Simple syrup/Vanilla/Rose/Lavender: 20g medium, 30g large.",
-        "Iced: caramel/chocolate must be dissolved with espresso in a separate bowl before adding."
       ]
     },
     "bases": [
@@ -18,9 +13,13 @@
         "name": "Espresso (hot) base",
         "category": "Espresso",
         "yields": "4 oz",
-        "measurements": [{ "label": "Espresso", "value": "1 shot" }],
+        "measurements": [
+          { "label": "Flavoring", "value": "If flavored: add flavor first" },
+          { "label": "Espresso", "value": "1 shot" }
+        ],
         "cupPrep": [
-          "Use 4oz shot cup (to-stay: small black glass cup)"
+          "Use 4oz shot cup (to-stay: small black glass cup)",
+          "Hot drink order: flavoring into cup first, then espresso"
         ],
         "buildSteps": [
           "Pull espresso shot into cup",
@@ -32,9 +31,13 @@
         "name": "Espresso (iced) base",
         "category": "Espresso",
         "yields": "12 oz",
-        "measurements": [{ "label": "Espresso", "value": "1 shot" }],
+        "measurements": [
+          { "label": "Flavoring", "value": "If flavored: add flavor first" },
+          { "label": "Espresso", "value": "1 shot" }
+        ],
         "cupPrep": [
-          "Use 12oz iced cup"
+          "Use 12oz iced cup",
+          "Prep flavoring per iced rules (if any)"
         ],
         "buildSteps": [
           "Add ice",
@@ -48,11 +51,13 @@
         "category": "Espresso",
         "yields": "4 oz",
         "measurements": [
+          { "label": "Flavoring", "value": "If flavored: add flavor first" },
           { "label": "Espresso", "value": "1 shot" },
           { "label": "Milk foam", "value": "Spoon foam on top" }
         ],
         "cupPrep": [
-          "Use 4oz shot cup (to-stay: small black glass cup)"
+          "Use 8oz hot cup (to-stay: small black glass cup)",
+          "Hot drink order: flavoring into cup first, then espresso"
         ],
         "buildSteps": [
           "Pull espresso shot into cup",
@@ -67,14 +72,14 @@
         "category": "Espresso",
         "yields": "8oz (small) / 10oz (medium)",
         "measurements": [
-          { "label": "Flavoring (optional)", "value": "If flavored: add flavor first (per rules)" },
+          { "label": "Flavoring", "value": "If flavored: add flavor first" },
           { "label": "Espresso", "value": "Standard shot(s)" },
-          { "label": "Steamed milk", "value": "Smallest pitcher, capp consistency" }
+          { "label": "Steamed milk", "value": "Smallest pitcher, cappuccino consistency" }
         ],
         "cupPrep": [
           "Use 8oz hot cup (small) or 10oz hot cup (medium)",
           "To-stay: 8oz small black mug; 10oz small white mug",
-          "If flavored hot drink: add flavoring directly into cup first"
+          "If flavored: add flavoring directly into cup first"
         ],
         "buildSteps": [
           "Add espresso after flavoring (if any)",
@@ -89,18 +94,19 @@
         "category": "Espresso",
         "yields": "12 oz",
         "measurements": [
-          { "label": "Flavoring (optional)", "value": "If flavored: follow iced rules" },
+          { "label": "Flavoring", "value": "If flavored: follow iced rules" },
           { "label": "Espresso", "value": "Standard shot(s)" },
-          { "label": "Lightly steamed milk", "value": "Not too hot; capp-ish texture" }
+          { "label": "Lightly steamed milk", "value": "Not too hot; cappuccino consistency" }
         ],
         "cupPrep": [
           "Use 12oz iced cup",
           "Prep flavoring per iced rules (if any)"
         ],
         "buildSteps": [
+          "Add splash of milk to cup",
           "Lightly steam milk (not too hot)",
           "Add ice",
-          "Add milk",
+          "Add steamed milk",
           "Serve"
         ]
       },
@@ -110,7 +116,7 @@
         "category": "Espresso",
         "yields": "12oz (medium) / 16oz (large)",
         "measurements": [
-          { "label": "Flavoring (optional)", "value": "Hot: flavor goes directly into cup first (per rules)" },
+          { "label": "Flavoring", "value": "Hot: flavor goes directly into cup first" },
           { "label": "Espresso", "value": "Standard shot(s)" },
           { "label": "Steamed milk", "value": "Latte consistency" }
         ],
@@ -131,7 +137,7 @@
         "category": "Espresso",
         "yields": "16oz (medium) / 24oz (large)",
         "measurements": [
-          { "label": "Syrup flavoring", "value": "Simple Syrup / Vanilla / Rose / Lavender: 20g M / 30g L" },
+          { "label": "Flavoring", "value": "Simple Syrup / Vanilla / Rose / Lavender: 20g M / 30g L" },
           { "label": "Espresso", "value": "Standard shot(s)" },
           { "label": "Milk", "value": "Fill to top after ice" }
         ],
@@ -168,7 +174,7 @@
         "category": "Espresso",
         "yields": "16oz (medium) / 24oz (large)",
         "measurements": [
-          { "label": "Sauce flavoring", "value": "Caramel/Chocolate: dissolve with espresso first" },
+          { "label": "Flavoring", "value": "Caramel/Chocolate: dissolve with espresso first" },
           { "label": "Espresso", "value": "Standard shot(s)" },
           { "label": "Milk", "value": "Fill to top after ice" }
         ],
@@ -191,7 +197,7 @@
         "category": "Espresso",
         "yields": "16oz (medium) / 24oz (large)",
         "measurements": [
-          { "label": "Flavoring", "value": "Use syrup/sauce rules as appropriate" },
+          { "label": "Flavoring (optional)", "value": "Use syrup/sauce rules as appropriate" },
           { "label": "Espresso", "value": "Standard shot(s)" },
           { "label": "Milk", "value": "Add last" }
         ],
@@ -536,7 +542,12 @@
         "id": "macchiato",
         "name": "Macchiato",
         "baseId": "base-macchiato",
-        "tags": ["hot"]
+        "tags": ["hot"],
+        "commonMistakes": [
+            "This is a traditional macchiato (small drink). Confirm the customer wants a traditional macchiato.",
+            "Many customers mean a Starbucks-style macchiato. If they want a larger drink, recommend a latte instead.",
+            "If they seem unsure: clarify it’s espresso with a spoonful of foam on top."
+        ]
       },
       {
         "id": "cappuccino-hot",
@@ -563,6 +574,7 @@
         "baseId": "base-latte-hot",
         "tags": ["hot", "chocolate"],
         "measurements": [
+          { "label": "Flavoring", "value": "None" },
           { "label": "Chocolate (milk or dark)", "value": "30g M / 40g L (sauce-style)" },
           { "label": "Cocoa powder", "value": "Add after chocolate dissolves" }
         ],
@@ -618,10 +630,21 @@
         "baseId": "base-latte-iced-syrup",
         "tags": ["iced"],
         "measurements": [
+          { "label": "Flavoring", "value": "None" },
           { "label": "Chaga powder", "value": "1 scoop (mix thoroughly with espresso in separate bowl)" }
         ],
-        "buildSteps": [
-          "Mix chaga powder thoroughly with espresso in separate bowl before adding to drink"
+        "buildOrders": [
+          {
+            "title": "Build order",
+            "steps": [
+                "In a separate bowl: mix chaga powder thoroughly with espresso",
+                "Add a splash of milk to cup",
+                "Add ice",
+                "Fill with milk to top",
+                "Pour chaga-espresso mixture in last",
+                "Lid + serve"
+            ]
+          }
         ]
       },
       {
@@ -632,20 +655,27 @@
         "yields": "16oz (medium) / 24oz (large)",
         "tags": ["iced", "special"],
         "measurements": [
-          { "label": "Simple syrup", "value": "20g (M) / 30g (L)" },
+          { "label": "Flavoring", "value": "Simple Syrup: 20g (M) / 30g (L)" },
           { "label": "Tiramisu cream", "value": "Top (leave space)" },
           { "label": "Cocoa powder", "value": "Top" },
           { "label": "Lady finger", "value": "Top" },
           { "label": "Lid", "value": "Domed lid" }
         ],
-        "buildSteps": [
-          "Prep as normal iced latte (syrup-style)",
-          "Fill milk to about 1/2 inch from the top",
-          "Mix with a spoon",
-          "Top with tiramisu cream",
-          "Top with cocoa powder",
-          "Add lady finger",
-          "Cap with domed lid"
+        "buildOrders": [
+          {
+            "title": "Build order",
+            "steps": [
+                "Add simple syrup to cup",
+                "Add a splash of milk",
+                "Add ice",
+                "Fill milk to about 1/2 inch from the top",
+                "Mix with a spoon",
+                "Top with tiramisu cream",
+                "Top with cocoa powder",
+                "Add lady finger",
+                "Cap with domed lid"
+            ]
+          }
         ]
       },
       {
@@ -654,15 +684,24 @@
         "baseId": "base-latte-iced-syrup",
         "tags": ["iced", "special"],
         "measurements": [
-          { "label": "Dalgona powder", "value": "1 scoop" },
+          { "label": "Flavoring", "value": "Dalgona powder: 1 scoop" },
           { "label": "Dalgona pieces", "value": "Top at end" },
           { "label": "Lid", "value": "Domed lid" }
         ],
-        "buildSteps": [
-          "Prep as normal iced latte (syrup-style)",
-          "Add dalgona pieces on top at the end",
-          "Cap with domed lid"
-        ]
+        "buildOrders": [
+          {
+            "title": "Build order",
+            "steps": [
+              "Add dalgona powder to cup",
+              "Add a splash of milk",
+              "Add ice",
+              "Fill with milk to top",
+              "Add espresso shot last",
+              "Add dalgona pieces on top",
+              "Cap with domed lid"
+             ]
+           }
+         ]
       },
       {
         "id": "maple-cold-foam-latte-iced",
@@ -670,28 +709,25 @@
         "baseId": "base-latte-iced-syrup",
         "tags": ["iced", "special"],
         "measurements": [
-          { "label": "Simple syrup", "value": "10g (M) / 20g (L)" },
+          { "label": "Flavoring", "value": "Simple syrup: 10g (M) / 20g (L)" },
           { "label": "Maple cold foam", "value": "Top (leave space)" },
           { "label": "Pumpkin seeds", "value": "Top" },
           { "label": "Lid", "value": "Sip lid" }
         ],
-        "buildSteps": [
-          "Prep as normal iced latte (syrup-style)",
-          "Fill milk to about 1/2 inch from the top",
-          "Mix with a spoon",
-          "Top with maple cold foam",
-          "Top with pumpkin seeds",
-          "Cap with sip lid"
-        ]
-      },
-  
-      {
-        "id": "chai-latte-hot",
-        "name": "Chai Latte (hot)",
-        "baseId": "base-chai-hot",
-        "tags": ["hot"],
-        "buildSteps": [
-          "Note: for a dirty chai, add a shot of espresso on top"
+        "buildOrders": [
+          {
+            "title": "Build order",
+            "steps": [
+              "Add simple syrup to cup",
+              "Add a splash of milk",
+              "Add ice",
+              "Fill milk to about 1/2 inch from the top",
+              "Mix with a spoon",
+              "Top with maple cold foam",
+              "Top with pumpkin seeds",
+              "Cap with sip lid"
+            ]
+          }
         ]
       },
       {
@@ -758,7 +794,7 @@
       {
         "id": "cortado-hot",
         "name": "Cortado (hot)",
-        "baseId": "base-latte-hot",
+        "baseId": "base-espresso-hot",
         "category": "Espresso",
         "yields": "8oz (one size)",
         "tags": ["hot"],
@@ -776,7 +812,7 @@
       {
         "id": "cortado-iced",
         "name": "Cortado (iced)",
-        "baseId": "base-latte-iced-syrup",
+        "baseId": "base-espresso-iced",
         "category": "Espresso",
         "yields": "12oz (one size)",
         "tags": ["iced"],

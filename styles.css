@@ -7,7 +7,7 @@
     font-display: swap;
   }
   
-  /* --- Theme tokens (Animal Crossing-ish mocha/cream) --- */
+  /* --- Theme tokens (mocha/cream) --- */
   :root {
     --bg: #fbf4e6;          /* warm cream */
     --panel: #fffaf0;       /* lighter cream */
@@ -32,7 +32,7 @@
     color: var(--text);
   
     background:
-      /* base cream wash (slightly lighter so pattern shows) */
+      /* base cream wash */
       linear-gradient(
         0deg,
         rgba(255, 248, 235, 0.88),
@@ -55,7 +55,7 @@
         transparent 160px
       ),
   
-      /* fine fabric threads (very subtle, avoids grid look) */
+      /* fine fabric threads */
       repeating-linear-gradient(
         90deg,
         rgba(58, 42, 32, 0.06) 0,
@@ -289,7 +289,6 @@
     line-height: 1.25;
   }
   
-  /* Measurements “key-value” rows */
   .kv {
     display: grid;
     gap: 8px;
@@ -327,4 +326,62 @@
     text-align: center;
     background: rgba(255, 250, 240, 0.75);
   }
+
+  /* Notes */
+
+  .metaNotes {
+    margin: 12px 0;
+    padding: 12px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    background: rgba(255, 250, 240, 0.85);
+    box-shadow: var(--shadow);
+  }
+  
+  .metaNotes h3 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text);
+  }
+  
+  .metaNotes ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  
+  .metaNotes__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .metaNotes__chev {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid rgba(58, 42, 32, 0.55);
+    border-bottom: 2px solid rgba(58, 42, 32, 0.55);
+    transform: rotate(45deg);
+    transition: transform 120ms ease;
+    flex: 0 0 auto;
+  }
+  
+  .metaNotes--collapsed .metaNotes__chev {
+    transform: rotate(-45deg);
+  }
+  
+  .metaNotes__body {
+    margin-top: 8px;
+  }
+  
+  .metaNotes--collapsed .metaNotes__body {
+    display: none;
+  }
+  
   

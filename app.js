@@ -4,7 +4,9 @@ const state = {
     categories: new Set(),
     selectedCategory: "all",
     query: "",
-    current: null
+    current: null,
+    meta: null,
+
   };
   
   const el = (id) => document.getElementById(id);
@@ -142,15 +144,20 @@ const state = {
 
   function renderDetailHtml(r) {
     const measurements = (r.measurements || [])
+      .filter(
+        (m) =>
+            m.value &&
+            String(m.value).toLowerCase() !== "none"
+      )
       .map(
         (m) => `
-          <div class="row">
-            <div class="key">${escapeHtml(m.label)}</div>
-            <div class="val">${escapeHtml(m.value)}</div>
-          </div>
+            <div class="row">
+                <div class="key">${escapeHtml(m.label)}</div>
+                <div class="val">${escapeHtml(m.value)}</div>
+            </div>
         `
-      )
-      .join("");
+    )
+    .join("");
   
     const cupPrep = (r.cupPrep || [])
       .map((s, idx) => stepHtml(`cup-${idx}`, s))
@@ -209,13 +216,61 @@ const state = {
       .replaceAll("'", "&#039;");
   }
   
+  function renderMetaNotes() {
+    const box = el("metaNotes");
+    if (!box) return;
+  
+    const notes = state.meta?.notes || [];
+    if (!notes.length) {
+      box.hidden = true;
+      box.innerHTML = "";
+      return;
+    }
+  
+    const storageKey = "metaNotesCollapsed";
+    const isCollapsed = localStorage.getItem(storageKey) === "1";
+  
+    const items = notes.map(n => `<li>${escapeHtml(n)}</li>`).join("");
+  
+    box.innerHTML = `
+      <div class="metaNotes__header" role="button" tabindex="0" aria-expanded="${!isCollapsed}">
+        <h3 style="margin:0;">Quick notes</h3>
+        <span class="metaNotes__chev" aria-hidden="true"></span>
+      </div>
+      <div class="metaNotes__body">
+        <ul>${items}</ul>
+      </div>
+    `;
+  
+    box.classList.toggle("metaNotes--collapsed", isCollapsed);
+    box.hidden = false;
+  
+    const header = box.querySelector(".metaNotes__header");
+    const toggle = () => {
+      const nowCollapsed = !box.classList.contains("metaNotes--collapsed");
+      box.classList.toggle("metaNotes--collapsed", nowCollapsed);
+      localStorage.setItem(storageKey, nowCollapsed ? "1" : "0");
+      header.setAttribute("aria-expanded", String(!nowCollapsed));
+    };
+  
+    header.addEventListener("click", toggle);
+    header.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggle();
+      }
+    });
+  }  
+
   async function loadRecipes() {
     const res = await fetch("recipes.json", { cache: "no-store" });
     if (!res.ok) throw new Error("Failed to load recipes.json");
     const data = await res.json();
   
     el("lastUpdated").textContent = data.lastUpdated || "-";
-  
+    
+    state.meta = data.meta || null;
+    
     const basesById = new Map((data.bases || []).map(b => [b.id, b]));
 
     function mergeArrays(baseArr, overrideArr) {
@@ -246,10 +301,12 @@ const state = {
         ...base,
         ...r,
         measurements: mergeMeasurements(base.measurements, r.measurements),
-        cupPrep: mergeArrays(base.cupPrep, r.cupPrep),
-        buildSteps: mergeArrays(base.buildSteps, r.buildSteps),
+        cupPrep: Array.isArray(r.cupPrep) ? r.cupPrep : base.cupPrep,
+        buildOrders: Array.isArray(r.buildOrders) ? r.buildOrders : base.buildOrders,
+        buildSteps: Array.isArray(r.buildSteps) ? r.buildSteps : base.buildSteps,
+
         commonMistakes: mergeArrays(base.commonMistakes, r.commonMistakes),
-        tags: mergeArrays(base.tags, r.tags)
+        tags: mergeArrays(base.tags, r.tags),
       };
     }
   
@@ -258,7 +315,8 @@ const state = {
   
     state.categories = new Set(state.recipes.map(r => r.category).filter(Boolean));  
     populateCategories();
-  
+    renderMetaNotes();
+
     applyFilters();
   
     // Open recipe from hash if present
