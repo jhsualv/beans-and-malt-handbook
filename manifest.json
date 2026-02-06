@@ -1,0 +1,9 @@
+{
+    "name": "Cafe Recipe Handbook",
+    "short_name": "Recipes",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#fbf4e6",
+    "theme_color": "#fffaf0"
+  }
+  

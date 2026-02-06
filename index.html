@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fffaf0" />
+  <title>Beans & Malt Recipes</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <noscript>This app needs JavaScript enabled.</noscript>
+</head>
+<body>
+  <header class="header">
+    <div class="header__top">
+      <h1 class="title">Beans & Malt Recipes</h1>
+      <button id="installBtn" class="btn btn--ghost" hidden>Install</button>
+    </div>
+
+    <div class="controls">
+      <input id="searchInput" class="input" type="search" placeholder="Search drinks (e.g., latte, matcha)..." autocomplete="off" />
+      <select id="categorySelect" class="select">
+        <option value="all">All categories</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="main">
+    <section id="listView" class="view view--active" aria-label="Recipe list">
+      <div id="recipeList" class="list"></div>
+      <p id="emptyState" class="muted" hidden>No recipes found.</p>
+    </section>
+
+    <section id="detailView" class="view" aria-label="Recipe detail">
+      <button id="backBtn" class="btn btn--ghost">Back</button>
+      <article id="recipeDetail" class="detail"></article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="muted">Offline-ready. Last updated: <span id="lastUpdated">-</span></span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

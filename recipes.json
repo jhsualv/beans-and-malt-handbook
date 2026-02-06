@@ -1,0 +1,903 @@
+{
+    "lastUpdated": "2026-02-06",
+    "meta": {
+      "notes": [
+        "Sizes: Hot (4oz, 8-10oz, 12oz, 16oz) and Iced (12oz, 16oz, 24oz). 8-10oz uses same cup; fill level differs.",
+        "Most drinks are medium or large. If someone asks for a small, make a medium.",
+        "To-stay cups are only for HOT drinks smaller than large (16oz)."
+      ],
+      "flavorRules": [
+        "Caramel/Chocolate (milk or dark): 30g medium, 40g large.",
+        "Simple syrup/Vanilla/Rose/Lavender: 20g medium, 30g large.",
+        "Iced: caramel/chocolate must be dissolved with espresso in a separate bowl before adding."
+      ]
+    },
+    "bases": [
+      {
+        "id": "base-espresso-hot",
+        "name": "Espresso (hot) base",
+        "category": "Espresso",
+        "yields": "4 oz",
+        "measurements": [{ "label": "Espresso", "value": "1 shot" }],
+        "cupPrep": [
+          "Use 4oz shot cup (to-stay: small black glass cup)"
+        ],
+        "buildSteps": [
+          "Pull espresso shot into cup",
+          "Serve with a 4oz cup of seltzer water"
+        ]
+      },
+      {
+        "id": "base-espresso-iced",
+        "name": "Espresso (iced) base",
+        "category": "Espresso",
+        "yields": "12 oz",
+        "measurements": [{ "label": "Espresso", "value": "1 shot" }],
+        "cupPrep": [
+          "Use 12oz iced cup"
+        ],
+        "buildSteps": [
+          "Add ice",
+          "Pull espresso shot into cup",
+          "Lid + serve"
+        ]
+      },
+      {
+        "id": "base-macchiato",
+        "name": "Macchiato base",
+        "category": "Espresso",
+        "yields": "4 oz",
+        "measurements": [
+          { "label": "Espresso", "value": "1 shot" },
+          { "label": "Milk foam", "value": "Spoon foam on top" }
+        ],
+        "cupPrep": [
+          "Use 4oz shot cup (to-stay: small black glass cup)"
+        ],
+        "buildSteps": [
+          "Pull espresso shot into cup",
+          "Steam a small amount of milk",
+          "Scoop a spoonful of foam onto drink",
+          "Serve"
+        ]
+      },
+      {
+        "id": "base-cappuccino-hot",
+        "name": "Cappuccino (hot) base",
+        "category": "Espresso",
+        "yields": "8oz (small) / 10oz (medium)",
+        "measurements": [
+          { "label": "Flavoring (optional)", "value": "If flavored: add flavor first (per rules)" },
+          { "label": "Espresso", "value": "Standard shot(s)" },
+          { "label": "Steamed milk", "value": "Smallest pitcher, capp consistency" }
+        ],
+        "cupPrep": [
+          "Use 8oz hot cup (small) or 10oz hot cup (medium)",
+          "To-stay: 8oz small black mug; 10oz small white mug",
+          "If flavored hot drink: add flavoring directly into cup first"
+        ],
+        "buildSteps": [
+          "Add espresso after flavoring (if any)",
+          "Steam milk in smallest pitcher to cappuccino consistency",
+          "Pour milk",
+          "Serve"
+        ]
+      },
+      {
+        "id": "base-cappuccino-iced",
+        "name": "Cappuccino (iced) base",
+        "category": "Espresso",
+        "yields": "12 oz",
+        "measurements": [
+          { "label": "Flavoring (optional)", "value": "If flavored: follow iced rules" },
+          { "label": "Espresso", "value": "Standard shot(s)" },
+          { "label": "Lightly steamed milk", "value": "Not too hot; capp-ish texture" }
+        ],
+        "cupPrep": [
+          "Use 12oz iced cup",
+          "Prep flavoring per iced rules (if any)"
+        ],
+        "buildSteps": [
+          "Lightly steam milk (not too hot)",
+          "Add ice",
+          "Add milk",
+          "Serve"
+        ]
+      },
+      {
+        "id": "base-latte-hot",
+        "name": "Latte (hot) base",
+        "category": "Espresso",
+        "yields": "12oz (medium) / 16oz (large)",
+        "measurements": [
+          { "label": "Flavoring (optional)", "value": "Hot: flavor goes directly into cup first (per rules)" },
+          { "label": "Espresso", "value": "Standard shot(s)" },
+          { "label": "Steamed milk", "value": "Latte consistency" }
+        ],
+        "cupPrep": [
+          "Use 12oz hot cup (medium) or 16oz hot cup (large)",
+          "To-stay mugs for <16oz (use white mugs specifically for rose/lavender)",
+          "Hot drink order: flavoring into cup first, then espresso"
+        ],
+        "buildSteps": [
+          "Steam milk to correct latte consistency",
+          "Pour steamed milk last",
+          "Serve"
+        ]
+      },
+      {
+        "id": "base-latte-iced-syrup",
+        "name": "Latte (iced, syrup-style) base",
+        "category": "Espresso",
+        "yields": "16oz (medium) / 24oz (large)",
+        "measurements": [
+          { "label": "Syrup flavoring", "value": "Simple Syrup / Vanilla / Rose / Lavender: 20g M / 30g L" },
+          { "label": "Espresso", "value": "Standard shot(s)" },
+          { "label": "Milk", "value": "Fill to top after ice" }
+        ],
+        "cupPrep": [
+          "Use 16oz iced cup (medium) or 24oz iced cup (large)",
+          "Add syrup directly to cup",
+          "Add a splash of milk"
+        ],
+        "buildOrders": [
+          {
+            "title": "Standard syrup order",
+            "steps": [
+              "Add ice",
+              "Fill with milk to top",
+              "Add espresso shot last",
+              "Lid + serve"
+            ]
+          },
+          {
+            "title": "Rose/Lavender order",
+            "steps": [
+              "Add ice",
+              "Fill milk almost all the way to the top",
+              "Add espresso shot last",
+              "For rose: add petals on top",
+              "Lid + serve"
+            ]
+          }
+        ]
+      },      
+      {
+        "id": "base-latte-iced-sauce",
+        "name": "Latte (iced, sauce-style) base",
+        "category": "Espresso",
+        "yields": "16oz (medium) / 24oz (large)",
+        "measurements": [
+          { "label": "Sauce flavoring", "value": "Caramel/Chocolate: dissolve with espresso first" },
+          { "label": "Espresso", "value": "Standard shot(s)" },
+          { "label": "Milk", "value": "Fill to top after ice" }
+        ],
+        "cupPrep": [
+          "Use 16oz iced cup (medium) or 24oz iced cup (large)",
+          "Add a splash of milk to cup",
+          "In a separate bowl: dissolve sauce with espresso",
+          "Pour mixture into cup",
+          "Add another splash of milk to the bowl, swirl to catch remainder, pour into cup"
+        ],
+        "buildSteps": [
+          "Add ice",
+          "Fill with milk to top",
+          "Lid + serve"
+        ]
+      },
+      {
+        "id": "base-shaken-espresso",
+        "name": "Shaken Espresso base",
+        "category": "Espresso",
+        "yields": "16oz (medium) / 24oz (large)",
+        "measurements": [
+          { "label": "Flavoring", "value": "Use syrup/sauce rules as appropriate" },
+          { "label": "Espresso", "value": "Standard shot(s)" },
+          { "label": "Milk", "value": "Add last" }
+        ],
+        "cupPrep": [
+          "Use 16oz iced cup (medium) or 24oz iced cup (large)",
+          "Use shaker cup"
+        ],
+        "buildSteps": [
+          "Add espresso and flavoring into shaker cup with ice",
+          "Shake well",
+          "Pour everything into serving cup",
+          "Add milk last",
+          "Lid + serve"
+        ]
+      },
+      {
+        "id": "base-chai-hot",
+        "name": "Chai Latte (hot) base",
+        "category": "Tea",
+        "yields": "12oz (medium) / 16oz (large)",
+        "measurements": [
+          { "label": "Chai concentrate", "value": "170g (in pitcher)" },
+          { "label": "Milk", "value": "Fill pitcher to proper amount for medium/large" },
+          { "label": "Cinnamon", "value": "Top + swirl" }
+        ],
+        "cupPrep": [
+          "Use 12oz hot cup (medium) or 16oz hot cup (large)",
+          "To-stay: white mug",
+          "Use blue or copper steaming pitcher"
+        ],
+        "buildSteps": [
+          "Add 170g chai concentrate to pitcher",
+          "Add milk to reach correct total for size",
+          "Steam",
+          "Pour some into cup",
+          "Add cinnamon, swirl",
+          "Pour the rest",
+          "Serve"
+        ]
+      },
+      {
+        "id": "base-chai-iced",
+        "name": "Chai Latte (iced) base",
+        "category": "Tea",
+        "yields": "16oz (medium) / 24oz (large)",
+        "measurements": [
+          { "label": "Chai concentrate", "value": "Fill ~3/5 of cup" },
+          { "label": "Milk", "value": "Fill remainder" },
+          { "label": "Cinnamon", "value": "Top" }
+        ],
+        "cupPrep": [
+          "Use 16oz iced cup (medium) or 24oz iced cup (large)"
+        ],
+        "buildSteps": [
+          "Fill cup with ice",
+          "Fill ~3/5 with chai concentrate",
+          "Fill the rest with milk",
+          "Top with cinnamon",
+          "Lid + serve"
+        ]
+      },
+      {
+        "id": "base-matcha-hot",
+        "name": "Matcha Latte (hot) base",
+        "category": "Matcha",
+        "yields": "12oz (medium) / 16oz (large)",
+        "measurements": [
+          { "label": "Matcha powder", "value": "5g (M) / 7g (L)" },
+          { "label": "Sugar (if sweetened)", "value": "2 spoonfuls white sugar" },
+          { "label": "Hot water", "value": "Whisk to paste consistency" },
+          { "label": "Steamed milk", "value": "Pour small amount, whisk, then pour rest" }
+        ],
+        "cupPrep": [
+          "Use 12oz hot cup (medium) or 16oz hot cup (large)",
+          "To-stay: black mug"
+        ],
+        "buildSteps": [
+          "Add matcha to cup (and sugar if sweetened)",
+          "Add a little hot water and whisk to paste consistency",
+          "Steam milk",
+          "Add a small amount of milk and whisk",
+          "Pour the rest of the milk",
+          "Serve"
+        ]
+      },
+      {
+        "id": "base-matcha-iced",
+        "name": "Matcha Latte (iced) base",
+        "category": "Matcha",
+        "yields": "16oz (one size)",
+        "measurements": [
+          { "label": "Matcha powder", "value": "5g" },
+          { "label": "Sugar (if sweetened)", "value": "2 spoonfuls white sugar" },
+          { "label": "Hot water", "value": "Whisk to paste consistency" },
+          { "label": "Milk", "value": "Mix some into bowl; then cup; then ice + milk" }
+        ],
+        "cupPrep": [
+          "Use 16oz iced cup",
+          "Use bowl + whisk"
+        ],
+        "buildSteps": [
+          "Add matcha to bowl (and sugar if sweetened)",
+          "Add a little hot water and whisk to paste consistency",
+          "Add some milk to bowl and whisk",
+          "Pour into cup",
+          "Add a splash of milk to bowl, mix to catch remainder, pour into cup",
+          "Add ice",
+          "Fill with milk",
+          "Lid + serve"
+        ]
+      },
+      {
+        "id": "base-americano-hot",
+        "name": "Americano (hot) base",
+        "category": "Espresso",
+        "yields": "12oz (medium) / 16oz (large)",
+        "measurements": [
+          { "label": "Hot water", "value": "Fill cup; leave room for espresso" },
+          { "label": "Espresso", "value": "Add shot last" }
+        ],
+        "cupPrep": [
+          "Use 12oz hot cup (medium) or 16oz hot cup (large)"
+        ],
+        "buildSteps": [
+          "Add hot water and leave room for espresso",
+          "If adding milk: add a splash instead of filling all the way with water",
+          "Add espresso shot last",
+          "Serve"
+        ]
+      },
+      {
+        "id": "base-americano-iced",
+        "name": "Americano (iced) base",
+        "category": "Espresso",
+        "yields": "16oz (medium) / 24oz (large)",
+        "measurements": [
+          { "label": "Ice", "value": "Fill to top" },
+          { "label": "Iced water", "value": "Fill; leave room for espresso" },
+          { "label": "Espresso", "value": "Add shot last" }
+        ],
+        "cupPrep": [
+          "Use 16oz iced cup (medium) or 24oz iced cup (large)"
+        ],
+        "buildSteps": [
+          "Fill cup with ice to the top",
+          "Fill with iced water and leave room for espresso",
+          "If adding milk: add splash first before water",
+          "Add espresso shot last",
+          "Lid + serve"
+        ]
+      },
+      {
+        "id": "base-iced-coffee",
+        "name": "Iced Coffee / Cold Brew base",
+        "category": "Coffee",
+        "yields": "16oz (medium) / 24oz (large)",
+        "measurements": [
+          { "label": "Ice", "value": "Add first" },
+          { "label": "Coffee", "value": "Fill to top" },
+          { "label": "If sweetened", "value": "Use simple syrup: 20g M / 30g L" },
+          { "label": "If milk", "value": "Splash milk first, splash coffee, then ice, then fill" }
+        ],
+        "cupPrep": [
+          "Use 16oz iced cup (medium) or 24oz iced cup (large)"
+        ],
+        "buildSteps": [
+          "If black: add ice, then fill to top with coffee",
+          "If sweetened: add simple syrup (20g M / 30g L)",
+          "If milk: splash milk, splash coffee, add ice, then fill to top with coffee",
+          "Lid + serve"
+        ]
+      },
+      {
+        "id": "base-drip-coffee-hot",
+        "name": "Drip Coffee (hot) base",
+        "category": "Coffee",
+        "yields": "12oz (medium) / 16oz (large)",
+        "measurements": [
+          { "label": "Coffee", "value": "Fill cup (leave room if adding milk)" },
+          { "label": "Sugar (if requested)", "value": "2 spoonfuls (M) / 3 spoonfuls (L)" },
+          { "label": "Milk (if requested)", "value": "Add at end (leave room)" }
+        ],
+        "cupPrep": [
+          "Use 12oz hot cup (medium) or 16oz hot cup (large)"
+        ],
+        "buildSteps": [
+          "If black: fill to top",
+          "If sugar: add sugar, add a little hot coffee, swirl to dissolve, then fill",
+          "If milk: fill coffee leaving room, then top with milk",
+          "Steam coffee to ensure it’s hot, then pour and serve"
+        ]
+      },
+      {
+        "id": "base-hot-chocolate",
+        "name": "Hot Chocolate base",
+        "category": "Chocolate",
+        "yields": "8oz (small) / 10oz (medium) / 12oz (large)",
+        "measurements": [
+          { "label": "Chocolate (milk or dark)", "value": "40g (S) / 50g (M) / 60g (L)" },
+          { "label": "Steamed milk", "value": "Pour some in and dissolve, then rest" },
+          { "label": "Cocoa powder", "value": "After dissolving" }
+        ],
+        "cupPrep": [
+          "To-stay mugs: small black mug (S), small white mug (M), latte mug (L)"
+        ],
+        "buildSteps": [
+          "Add chocolate grams to cup",
+          "Steam correct amount of milk",
+          "Pour a small amount of milk into chocolate and mix to dissolve",
+          "Add cocoa powder",
+          "Add the rest of the milk",
+          "Serve"
+        ]
+      },
+      {
+        "id": "base-iced-chocolate",
+        "name": "Iced Chocolate base",
+        "category": "Chocolate",
+        "yields": "16oz (one size)",
+        "measurements": [
+          { "label": "Chocolate (milk or dark)", "value": "60g" },
+          { "label": "Milk", "value": "Steam a little to dissolve chocolate, then rest cold" },
+          { "label": "Cocoa powder", "value": "Top" }
+        ],
+        "cupPrep": [
+          "Use 16oz iced cup",
+          "Use bowl"
+        ],
+        "buildSteps": [
+          "Add 60g chocolate to bowl",
+          "Steam a little milk and mix well to dissolve chocolate",
+          "Pour mixture into cup",
+          "Add ice",
+          "Add rest of milk",
+          "Top with cocoa powder",
+          "Lid + serve"
+        ]
+      },
+      {
+        "id": "base-strawberry-mint-fritz",
+        "name": "Strawberry Mint Fritz base",
+        "category": "Fruit",
+        "yields": "16oz (one size)",
+        "measurements": [
+          { "label": "Diced strawberries", "value": "Cover bottom of cup" },
+          { "label": "Mint sprig", "value": "Muddle with strawberries; garnish at end" },
+          { "label": "Lemon juice", "value": "1 jigger" },
+          { "label": "Simple syrup", "value": "1 jigger" },
+          { "label": "Seltzer", "value": "Mix, then fill to top" }
+        ],
+        "cupPrep": [
+          "Use 16oz iced cup",
+          "Use muddler",
+          "Serve with domed lid and thick straw"
+        ],
+        "buildSteps": [
+          "Add diced strawberries to cover bottom",
+          "Add mint sprig and muddle well",
+          "Add 1 jigger lemon juice + 1 jigger simple syrup",
+          "Add some seltzer and mix a bit",
+          "Add ice",
+          "Fill with seltzer to the top",
+          "Top with mint sprig",
+          "Domed lid + thick straw"
+        ]
+      },
+      {
+        "id": "base-grapefruit-ade",
+        "name": "Grapefruit Ade base",
+        "category": "Fruit",
+        "yields": "24oz (one size)",
+        "measurements": [
+          { "label": "Grapefruit", "value": "130g" },
+          { "label": "Grapefruit syrup", "value": "1 jigger" },
+          { "label": "Seltzer", "value": "Mix, then fill to top" }
+        ],
+        "cupPrep": [
+          "Use 24oz iced cup",
+          "Serve with domed lid and thick straw"
+        ],
+        "buildSteps": [
+          "Add 130g grapefruit to cup",
+          "Add 1 jigger grapefruit syrup",
+          "Add some seltzer and mix",
+          "Add ice",
+          "Fill with seltzer to the top",
+          "Domed lid + thick straw"
+        ]
+      },
+      {
+        "id": "base-tea-hot",
+        "name": "Tea (hot) base",
+        "category": "Tea",
+        "yields": "16oz (one size)",
+        "measurements": [
+          { "label": "Tea bag", "value": "1" },
+          { "label": "Hot water", "value": "Fill cup" }
+        ],
+        "cupPrep": [
+          "Use 16oz hot cup"
+        ],
+        "buildSteps": [
+          "Add tea bag to cup",
+          "Fill with hot water",
+          "Serve"
+        ]
+      },
+      {
+        "id": "base-tea-iced",
+        "name": "Tea (iced) base",
+        "category": "Tea",
+        "yields": "16oz (medium) / 24oz (large)",
+        "measurements": [
+          { "label": "Ice", "value": "Fill cup" },
+          { "label": "Iced bergamot tea", "value": "Fill from fridge" }
+        ],
+        "cupPrep": [
+          "Use 16oz iced cup (medium) or 24oz iced cup (large)"
+        ],
+        "buildSteps": [
+          "Fill with ice",
+          "Fill with iced bergamot tea from fridge",
+          "If it’s winter / tea is made less often: taste before serving to confirm it hasn’t gone bad",
+          "Lid + serve"
+        ]
+      }
+    ],
+    "recipes": [
+      {
+        "id": "espresso-hot",
+        "name": "Espresso (hot)",
+        "baseId": "base-espresso-hot",
+        "tags": ["hot"]
+      },
+      {
+        "id": "espresso-iced",
+        "name": "Espresso (iced)",
+        "baseId": "base-espresso-iced",
+        "tags": ["iced"]
+      },
+      {
+        "id": "macchiato",
+        "name": "Macchiato",
+        "baseId": "base-macchiato",
+        "tags": ["hot"]
+      },
+      {
+        "id": "cappuccino-hot",
+        "name": "Cappuccino (hot)",
+        "baseId": "base-cappuccino-hot",
+        "tags": ["hot"]
+      },
+      {
+        "id": "cappuccino-iced",
+        "name": "Cappuccino (iced)",
+        "baseId": "base-cappuccino-iced",
+        "tags": ["iced"]
+      },
+  
+      {
+        "id": "latte-hot",
+        "name": "Latte (hot)",
+        "baseId": "base-latte-hot",
+        "tags": ["hot"]
+      },
+      {
+        "id": "mocha-hot",
+        "name": "Mocha (hot)",
+        "baseId": "base-latte-hot",
+        "tags": ["hot", "chocolate"],
+        "measurements": [
+          { "label": "Chocolate (milk or dark)", "value": "30g M / 40g L (sauce-style)" },
+          { "label": "Cocoa powder", "value": "Add after chocolate dissolves" }
+        ],
+        "buildSteps": [
+          "After adding espresso + chocolate: mix well to dissolve",
+          "Add cocoa powder after mixing"
+        ]
+      },
+      {
+        "id": "chagaccino-hot",
+        "name": "Chagaccino (hot)",
+        "baseId": "base-latte-hot",
+        "tags": ["hot"],
+        "measurements": [
+          { "label": "Chaga powder", "value": "1 scoop" }
+        ]
+      },
+  
+      {
+        "id": "latte-iced-syrup",
+        "name": "Latte (iced, syrup-style)",
+        "baseId": "base-latte-iced-syrup",
+        "tags": ["iced"]
+      },  
+      {
+        "id": "latte-iced-sauce",
+        "name": "Latte (iced, sauce-style)",
+        "baseId": "base-latte-iced-sauce",
+        "tags": ["iced"]
+      },
+      {
+        "id": "shaken-espresso",
+        "name": "Shaken Espresso",
+        "baseId": "base-shaken-espresso",
+        "tags": ["iced"]
+      },
+      {
+        "id": "mocha-iced",
+        "name": "Mocha (iced)",
+        "baseId": "base-latte-iced-sauce",
+        "tags": ["iced", "chocolate"],
+        "measurements": [
+          { "label": "Chocolate (milk or dark)", "value": "30g M / 40g L (dissolve with espresso)" },
+          { "label": "Cocoa powder", "value": "Top at end" }
+        ],
+        "buildSteps": [
+          "Top with cocoa powder at the end"
+        ]
+      },
+      {
+        "id": "chagaccino-iced",
+        "name": "Chagaccino (iced)",
+        "baseId": "base-latte-iced-syrup",
+        "tags": ["iced"],
+        "measurements": [
+          { "label": "Chaga powder", "value": "1 scoop (mix thoroughly with espresso in separate bowl)" }
+        ],
+        "buildSteps": [
+          "Mix chaga powder thoroughly with espresso in separate bowl before adding to drink"
+        ]
+      },
+      {
+        "id": "tiramisu-latte-iced",
+        "name": "Tiramisu Latte (iced)",
+        "baseId": "base-latte-iced-syrup",
+        "category": "Espresso",
+        "yields": "16oz (medium) / 24oz (large)",
+        "tags": ["iced", "special"],
+        "measurements": [
+          { "label": "Simple syrup", "value": "20g (M) / 30g (L)" },
+          { "label": "Tiramisu cream", "value": "Top (leave space)" },
+          { "label": "Cocoa powder", "value": "Top" },
+          { "label": "Lady finger", "value": "Top" },
+          { "label": "Lid", "value": "Domed lid" }
+        ],
+        "buildSteps": [
+          "Prep as normal iced latte (syrup-style)",
+          "Fill milk to about 1/2 inch from the top",
+          "Mix with a spoon",
+          "Top with tiramisu cream",
+          "Top with cocoa powder",
+          "Add lady finger",
+          "Cap with domed lid"
+        ]
+      },
+      {
+        "id": "dalgona-latte-iced",
+        "name": "Dalgona Latte (iced)",
+        "baseId": "base-latte-iced-syrup",
+        "tags": ["iced", "special"],
+        "measurements": [
+          { "label": "Dalgona powder", "value": "1 scoop" },
+          { "label": "Dalgona pieces", "value": "Top at end" },
+          { "label": "Lid", "value": "Domed lid" }
+        ],
+        "buildSteps": [
+          "Prep as normal iced latte (syrup-style)",
+          "Add dalgona pieces on top at the end",
+          "Cap with domed lid"
+        ]
+      },
+      {
+        "id": "maple-cold-foam-latte-iced",
+        "name": "Maple Cold Foam Latte (iced)",
+        "baseId": "base-latte-iced-syrup",
+        "tags": ["iced", "special"],
+        "measurements": [
+          { "label": "Simple syrup", "value": "10g (M) / 20g (L)" },
+          { "label": "Maple cold foam", "value": "Top (leave space)" },
+          { "label": "Pumpkin seeds", "value": "Top" },
+          { "label": "Lid", "value": "Sip lid" }
+        ],
+        "buildSteps": [
+          "Prep as normal iced latte (syrup-style)",
+          "Fill milk to about 1/2 inch from the top",
+          "Mix with a spoon",
+          "Top with maple cold foam",
+          "Top with pumpkin seeds",
+          "Cap with sip lid"
+        ]
+      },
+  
+      {
+        "id": "chai-latte-hot",
+        "name": "Chai Latte (hot)",
+        "baseId": "base-chai-hot",
+        "tags": ["hot"],
+        "buildSteps": [
+          "Note: for a dirty chai, add a shot of espresso on top"
+        ]
+      },
+      {
+        "id": "chai-latte-iced",
+        "name": "Chai Latte (iced)",
+        "baseId": "base-chai-iced",
+        "tags": ["iced"],
+        "buildSteps": [
+          "Note: for a dirty chai, add a shot of espresso on top"
+        ]
+      },
+  
+      {
+        "id": "matcha-latte-hot",
+        "name": "Matcha Latte (hot)",
+        "baseId": "base-matcha-hot",
+        "tags": ["hot"]
+      },
+      {
+        "id": "matcha-latte-iced",
+        "name": "Matcha Latte (iced)",
+        "baseId": "base-matcha-iced",
+        "tags": ["iced"]
+      },
+      {
+        "id": "strawberry-matcha-latte-iced",
+        "name": "Strawberry Matcha Latte (iced)",
+        "baseId": "base-matcha-iced",
+        "category": "Matcha",
+        "yields": "16oz (one size)",
+        "tags": ["iced", "special"],
+        "measurements": [
+          { "label": "Condensed milk syrup", "value": "1 jigger (into matcha bowl)" },
+          { "label": "Diced strawberries", "value": "Cover bottom of smaller shaker cup" },
+          { "label": "Strawberry syrup", "value": "1 jigger (into shaker cup)" },
+          { "label": "Lid", "value": "Domed lid + thick straw" }
+        ],
+        "buildSteps": [
+          "Matcha bowl: whisk matcha + hot water, then add 1 jigger condensed milk syrup and whisk",
+          "Add some milk to bowl and whisk",
+          "Shaker: add diced strawberries to cover bottom of smaller cup",
+          "Add 1 jigger strawberry syrup, then add ice and milk",
+          "Shake until well mixed",
+          "Pour strawberry mixture into serving cup",
+          "Add more ice if needed",
+          "Add matcha mixture on top",
+          "Cap with domed lid and serve with thick straw"
+        ]
+      },
+  
+      {
+        "id": "americano-hot",
+        "name": "Americano (hot)",
+        "baseId": "base-americano-hot",
+        "tags": ["hot"]
+      },
+      {
+        "id": "americano-iced",
+        "name": "Americano (iced)",
+        "baseId": "base-americano-iced",
+        "tags": ["iced"]
+      },
+  
+      {
+        "id": "cortado-hot",
+        "name": "Cortado (hot)",
+        "baseId": "base-latte-hot",
+        "category": "Espresso",
+        "yields": "8oz (one size)",
+        "tags": ["hot"],
+        "cupPrep": [
+          "Use 8oz hot cup (to-stay: small black glass)",
+          "Cortado is 1:1 espresso:milk"
+        ],
+        "buildSteps": [
+          "Use golden pitcher with a small amount of milk",
+          "Steam milk",
+          "Add milk to match 1:1 espresso:milk",
+          "Serve"
+        ]
+      },
+      {
+        "id": "cortado-iced",
+        "name": "Cortado (iced)",
+        "baseId": "base-latte-iced-syrup",
+        "category": "Espresso",
+        "yields": "12oz (one size)",
+        "tags": ["iced"],
+        "cupPrep": [
+          "Use 12oz iced cup",
+          "Cortado is 1:1 espresso:milk"
+        ],
+        "buildSteps": [
+          "Prep like iced latte, but only a small amount of milk (1:1 espresso:milk)",
+          "Add ice",
+          "Serve"
+        ]
+      },
+  
+      {
+        "id": "flat-white-hot",
+        "name": "Flat White (hot)",
+        "baseId": "base-latte-hot",
+        "category": "Espresso",
+        "yields": "8oz (one size)",
+        "tags": ["hot"],
+        "cupPrep": [
+          "Use 8oz hot cup (to-stay: glass cup)"
+        ],
+        "buildSteps": [
+          "Fill golden pitcher with milk",
+          "Steam to correct consistency",
+          "Add milk to cup",
+          "Serve"
+        ]
+      },
+      {
+        "id": "flat-white-iced",
+        "name": "Flat White (iced)",
+        "baseId": "base-latte-iced-syrup",
+        "category": "Espresso",
+        "yields": "12oz (one size)",
+        "tags": ["iced"],
+        "cupPrep": [
+          "Use 12oz iced cup"
+        ],
+        "buildSteps": [
+          "Exactly like an iced latte but in a smaller cup"
+        ]
+      },
+  
+      {
+        "id": "drip-coffee-hot",
+        "name": "Drip Coffee (hot)",
+        "baseId": "base-drip-coffee-hot",
+        "tags": ["hot"]
+      },
+  
+      {
+        "id": "iced-coffee",
+        "name": "Iced Coffee",
+        "baseId": "base-iced-coffee",
+        "tags": ["iced"]
+      },
+      {
+        "id": "cold-brew",
+        "name": "Cold Brew",
+        "baseId": "base-iced-coffee",
+        "tags": ["iced"]
+      },
+      {
+        "id": "kyoto-cold-brew",
+        "name": "Kyoto Cold Brew",
+        "baseId": "base-iced-coffee",
+        "yields": "12oz (one size)",
+        "tags": ["iced"],
+        "cupPrep": ["Use 12oz iced cup"]
+      },
+  
+      {
+        "id": "strawberry-mint-fritz",
+        "name": "Strawberry Mint Fritz",
+        "baseId": "base-strawberry-mint-fritz",
+        "tags": ["iced"]
+      },
+  
+      {
+        "id": "hot-chocolate",
+        "name": "Hot Chocolate",
+        "baseId": "base-hot-chocolate",
+        "tags": ["hot"]
+      },
+      {
+        "id": "iced-chocolate",
+        "name": "Iced Chocolate",
+        "baseId": "base-iced-chocolate",
+        "tags": ["iced"]
+      },
+  
+      {
+        "id": "grapefruit-ade",
+        "name": "Grapefruit Ade",
+        "baseId": "base-grapefruit-ade",
+        "tags": ["iced"]
+      },
+  
+      {
+        "id": "tea-hot",
+        "name": "Tea (hot)",
+        "baseId": "base-tea-hot",
+        "tags": ["hot"]
+      },
+      {
+        "id": "tea-iced",
+        "name": "Tea (iced)",
+        "baseId": "base-tea-iced",
+        "tags": ["iced"],
+        "buildSteps": [
+          "If they ask for a specific tea (not the pre-made iced bergamot):",
+          "Steep tea bag in a glass measuring cup with hot water for ~2–3 minutes",
+          "Fill serving cup with extra ice (hot water will melt it)",
+          "Pour steeped tea into cup",
+          "Top with more iced water if needed",
+          "Lid + serve"
+        ]
+      }            
+    ]
+  }
+  
