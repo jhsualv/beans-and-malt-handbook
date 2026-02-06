@@ -1,4 +1,4 @@
-const CACHE_NAME = "cafe-handbook-v1";
+const CACHE_NAME = "cafe-handbook-v2";
 const ASSETS = [
   "./",
   "./index.html",
