@@ -744,8 +744,8 @@
         "name": "Chai Latte (iced)",
         "baseId": "base-chai-iced",
         "tags": ["iced"],
-        "buildSteps": [
-          "Note: for a dirty chai, add a shot of espresso on top"
+        "commonMistakes": [
+          "Dirty chai: add a shot of espresso on top."
         ]
       },
   
