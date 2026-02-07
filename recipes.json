@@ -731,6 +731,15 @@
         ]
       },
       {
+        "id": "chai-latte-hot",
+        "name": "Chai Latte (hot)",
+        "baseId": "base-chai-hot",
+        "tags": ["hot"],
+        "commonMistakes": [
+          "Dirty chai: add a shot of espresso on top."
+        ]
+      },
+      {
         "id": "chai-latte-iced",
         "name": "Chai Latte (iced)",
         "baseId": "base-chai-iced",
